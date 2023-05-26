@@ -1,0 +1,23 @@
+<!--
+ - Created by aboub on 09/05/2023.
+ -->
+
+<!-- Opportunity Search Lwc -->
+<template>
+    <article class="slds-card slds-card_boundary container medium">
+        <lightning-card variant="narrow" title="Search for Opportunities by Keyword" icon-name="standard:relationship">
+            <div class="slds-p-around_medium lgc-bg">
+                <lightning-input type="text" label="Keyword" value={searchValue} data-id="maRecherche"></lightning-input>
+            </div>
+            <div class="slds-p-left_medium slds-m-bottom_medium">
+                <lightning-button label="Search" title="Search opportunities" onclick={handleClick} class="slds-button_neutral"></lightning-button>
+            </div>
+            <lightning-datatable if:true={opportunities}
+                    key-field="id"
+                    data = {opportunities}
+                    columns= {columnsToDisplay}>
+            </lightning-datatable>
+
+        </lightning-card>
+    </article>
+</template>
